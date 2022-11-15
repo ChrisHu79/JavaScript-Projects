@@ -40,7 +40,7 @@ function increment() {  // An example of increasing a number in increments //
     document.getElementById("inc").innerHTML = "X++ = " + X;
 }
 
-function decrement() {  // Ane example of decreasing a number by increments //
+function decrement() {  // An example of decreasing a number by increments //
     var Y = 5.25;
     Y--
     document.getElementById("dec").innerHTML = "Y++ = " + Y;
