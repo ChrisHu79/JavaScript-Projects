@@ -16,17 +16,17 @@ function multiplication() {  // Multiplication //
 
 function division() {  // Division //
     var sum = 48 / 6;
-    document.getElementById("divide").innerHTML = "48 / 6 = " + sum
+    document.getElementById("divide").innerHTML = "48 / 6 = " + sum;
 }
 
 function multiple_operation (){   // This is an example of multiple operations in one //
     var sum = (1 + 2) * 10 / 2 -5;
-    document.getElementById("multiple").innerHTML = "1 plus 2, multiplied by 10, divided in half and then subtracted by 5 = " + sum
+    document.getElementById("multiple").innerHTML = "1 plus 2, multiplied by 10, divided in half and then subtracted by 5 = " + sum;
 }
 
 function modulus_Operator (){   // This is an example of a modulus operator //
     var sum = 25 % 6;
-    document.getElementById("mod").innerHTML = "When you divide 25 by 6 you have a remainder of: " + sum
+    document.getElementById("mod").innerHTML = "When you divide 25 by 6 you have a remainder of: " + sum;
 }
 
 function unary() {  // An example of a Unary operator //
