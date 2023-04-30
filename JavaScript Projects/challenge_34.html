@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>This is an example of using bookmarks to link to various sections of the page and using the smooth scrolling effect while navigating</title>
+    <style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+	
+        html {
+  scroll-behavior: smooth;
+}
+    
+#slideshow { 
+  margin: 50px auto; 
+  position: relative; 
+  width: 240px; 
+  height: 240px; 
+  padding: 10px; 
+  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#slideshow > div { 
+  position: absolute; 
+  top: 10px; 
+  left: 10px; 
+  right: 10px; 
+  bottom: 10px; 
+}
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <button class="open-button" onclick="openForm()">Contact Us</button>
+
+<div class="form-popup" id="myForm">
+  <form action="" class="form-container">
+    <h1>Submit</h1>
+    
+    <label for="email"><b>First Name</b></label>
+    <input type="text" placeholder="First Name" name="First Name" required>
+
+    <label for="psw"><b>Last Name</b></label>
+    <input type="text" placeholder="Last Name" name="Last Name" required>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+    
+    <script>
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+        
+        $("#slideshow > div:gt(0)").hide();
+    
+    setInterval(function() { 
+      $('#slideshow > div:first')
+      .fadeOut(1000)
+      .next()
+      .fadeIn(1000)
+      .end()
+      .appendTo('#slideshow');
+    }, 3000);
+    </script>
+    
+    <!-- NAV -->
+			<div>
+				<div>
+					<ul>
+						<a href="#home" id="link"><li>HOME</li></a>
+						<a href="#gallery"><li>GALLERY</li></a>
+						<a href="#contact"><li>CUSTOM ORDERS</li></a>
+					</ul>
+				</div>
+			</div>
+			<!-- END NAV -->
+
+
+            
+
+
+
+
+
+            <br><br><br>
+			<!-- HOME -->
+			<div id="home">
+				<div>
+					<div>
+						<span>Check out my Facebook and Instagram pages</span>
+					</div>
+				</div>
+			</div>
+			<!-- END HOME -->
+
+
+            
+            
+
+
+            <br><br><br>
+			<!-- GALLERY -->
+            <section>
+				<div id="gallery">
+					<h1>Gallery</h1>
+					<div>
+						<!-- PHOTO-CONTAINER 1 -->
+						<div>
+							<div>
+								<img src="thumb_3.jpg" alt="pry bar">
+								<div>
+									<h3>Click to Enlarge</h3>
+									<p>I have several colours and materials available to make beads from.</p>
+								</div>
+							</div>
+						</div>
+						<!-- END PHOTO_CONTAINER 1 -->
+                    </div>
+				</div>
+			</section>
+			<!-- END GALLERY -->
+            
+
+            
+
+
+
+
+            <br><br><br>
+			<!-- RSVP -->
+			<section>
+				<div id="contact">
+					<div>
+						<h1>Custom orders</h1>
+						<div>
+							<h2>
+								<span>Your custom edc piece is almost ready.</span>
+								<br/>Make an order today!
+							</h2>
+							<p>
+			                    Please provide us with your basic contact information.
+							</p>
+							<div>
+								<form action="" method="post">
+									<input class="rsvp" type="text" value="First Name">
+									<input class="rsvp" type="text" value="Last Name">
+									<input class="rsvp" type="text" value="Email Address">
+									<input class="rsvp" type="text" value="Phone Number">
+									<div class="form-spacer">
+									    <label class="terms">Terms and Conditions</labels>
+													</div>
+													<div>
+														<input type="submit" value="Submit">
+							</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+	<!-- END RSVP  -->
+    
+    <div id="slideshow">
+    <div>
+    <img src="thumb_1.jpg">
+    </div>
+    <div>
+    <img src="thumb_2.jpg">
+    </div>
+	</div>
+</body>
+
+</html>
